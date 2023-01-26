@@ -1,0 +1,20 @@
+[package]
+name = "bad-localtime"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name="time"
+path="time.rs"
+
+[[bin]]
+name="chrono"
+path="chrono.rs"
+
+[dependencies]
+time = { git = "https://github.com/caldwell/time", branch = "libtz", features = ["local-offset"] }
+#time = { path = "../time/time", features = ["local-offset"] }
+#time = { version = "0.3", features = ["local-offset"] }
+chrono = { git = "https://github.com/caldwell/chrono", branch = "libtz" }
+#chrono = { path = "../chrono" }
+#chrono = "0.4"
